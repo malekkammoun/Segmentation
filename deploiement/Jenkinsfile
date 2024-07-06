@@ -19,7 +19,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('my-flask-app:latest')
+                    // Spécifiez le contexte de build explicitement
+                    docker.build('my-flask-app:latest', '.')
                 }
             }
         }
